@@ -33,6 +33,7 @@ MANIFEST
 *.manifest
 *.spec
 
+autoinvoice-b6618-168048318340.json
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
