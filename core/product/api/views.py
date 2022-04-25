@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from ..models import Product, Order, ProductOrder
 from .serializers import GenerateInvoiceSerializer, ProductSerializer, ProductBuySerializer
 from ..utils import check_product_exists, check_available
-from xhtml2pdf import pisa
+# from xhtml2pdf import pisa
 from django.http import HttpResponse
 from django.template.loader import get_template
 from weasyprint import HTML
@@ -227,7 +227,10 @@ class GenerateInvoiceAPIView(APIView):
 
     
         order_obj.invoice_file = f'invoice_pdf/{order_obj.invoice_id}.pdf'
+        order_obj.phone = data['phone']
+        order_obj.address = data['address']
         order_obj.save()
+
 
         return Response(order_obj.invoice_file.url, status=status.HTTP_200_OK)
         
