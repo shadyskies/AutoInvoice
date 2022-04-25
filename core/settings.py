@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     # OWN
     'product',
     'user',
-    'rest_framework',
     'firebase_auth',
+
+    #3rd party
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,8 +57,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
