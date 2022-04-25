@@ -61,6 +61,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = ['https://shadyskies.herokuapp.com']
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
